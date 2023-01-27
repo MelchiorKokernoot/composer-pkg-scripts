@@ -1,17 +1,17 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Capability;
+namespace MelchiorKokernoot\ComposerPkgScripts\Capability;
 
 use Composer\Command\ScriptAliasCommand;
-use Kuria\ComposerPkgScripts\Command\DumpPackageScriptsCommand;
-use Kuria\ComposerPkgScripts\Command\ListPackageScriptsCommand;
-use Kuria\ComposerPkgScripts\Plugin;
-use Kuria\ComposerPkgScripts\Script\Script;
-use Kuria\ComposerPkgScripts\Script\ScriptManager;
-use Kuria\DevMeta\Test;
+use MelchiorKokernoot\ComposerPkgScripts\Command\DumpPackageScriptsCommand;
+use MelchiorKokernoot\ComposerPkgScripts\Command\ListPackageScriptsCommand;
+use MelchiorKokernoot\ComposerPkgScripts\Plugin;
+use MelchiorKokernoot\ComposerPkgScripts\Script\Script;
+use MelchiorKokernoot\ComposerPkgScripts\Script\ScriptManager;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 
-class ScriptCommandProviderTest extends Test
+class ScriptCommandProviderTest extends TestCase
 {
     function testShouldGetCommands()
     {
@@ -41,14 +41,14 @@ class ScriptCommandProviderTest extends Test
 
         $this->assertSame('acme:example:foo', $commands[2]->getName());
         $this->assertSame('foo help', $commands[2]->getDescription());
-        $this->assertContains('"foo"', $commands[2]->getHelp());
+        $this->assertStringContainsString('"foo"', $commands[2]->getHelp());
 
         $this->assertSame('foo', $commands[3]->getName());
         $this->assertSame('foo help', $commands[3]->getDescription());
-        $this->assertContains('"foo"', $commands[3]->getHelp());
+        $this->assertStringContainsString('"foo"', $commands[3]->getHelp());
 
         $this->assertSame('acme:example:baz', $commands[4]->getName());
         $this->assertSame('baz help', $commands[4]->getDescription());
-        $this->assertContains('"baz"', $commands[4]->getHelp());
+        $this->assertStringContainsString('"baz"', $commands[4]->getHelp());
     }
 }

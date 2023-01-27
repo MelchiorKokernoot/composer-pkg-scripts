@@ -1,18 +1,19 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Script;
+namespace MelchiorKokernoot\ComposerPkgScripts\Script;
 
 use Composer\Composer;
 use Composer\Config;
 use Composer\Package\CompletePackage;
 use Composer\Package\RootPackageInterface;
+use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Repository\RepositoryManager;
 use Composer\Repository\WritableRepositoryInterface;
-use Kuria\DevMeta\Test;
+use PHPUnit\Framework\TestCase;
 
-class ScriptManagerTest extends Test
+class ScriptManagerTest extends TestCase
 {
-    function testShouldRegisterScripts()
+    public function testShouldRegisterScripts(): void
     {
         $rootPackageMock = $this->createMock(CompletePackage::class);
         $loaderMock = $this->createMock(ScriptLoader::class);
@@ -184,7 +185,7 @@ class ScriptManagerTest extends Test
                 'all' => ['config' => ['global-config' => 'value']],
             ]),
             'getRepositoryManager' => $this->createConfiguredMock(RepositoryManager::class, [
-                'getLocalRepository' => $this->createConfiguredMock(WritableRepositoryInterface::class, [
+                'getLocalRepository' => $this->createConfiguredMock(InstalledRepositoryInterface::class, [
                     'getPackages' => [],
                 ])
             ])

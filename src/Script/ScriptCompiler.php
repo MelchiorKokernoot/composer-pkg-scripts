@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Script;
+namespace MelchiorKokernoot\ComposerPkgScripts\Script;
 
-use Kuria\ComposerPkgScripts\Exception\ScriptCompilerException;
-use Kuria\ComposerPkgScripts\Exception\InvalidScriptVariableException;
+use MelchiorKokernoot\ComposerPkgScripts\Exception\ScriptCompilerException;
+use MelchiorKokernoot\ComposerPkgScripts\Exception\InvalidScriptVariableException;
 
 class ScriptCompiler
 {

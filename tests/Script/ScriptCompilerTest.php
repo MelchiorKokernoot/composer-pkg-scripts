@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Script;
+namespace MelchiorKokernoot\ComposerPkgScripts\Script;
 
-use Kuria\ComposerPkgScripts\Exception\ScriptCompilerException;
-use Kuria\DevMeta\Test;
+use MelchiorKokernoot\ComposerPkgScripts\Exception\ScriptCompilerException;
+use PHPUnit\Framework\TestCase;
 
-class ScriptCompilerTest extends Test
+class ScriptCompilerTest extends TestCase
 {
     /** @var ScriptCompiler */
     private $compiler;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->compiler = new ScriptCompiler();
 

@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Command;
+namespace MelchiorKokernoot\ComposerPkgScripts\Command;
 
 use Composer\Command\BaseCommand;
-use Kuria\ComposerPkgScripts\Script\ScriptManager;
+use MelchiorKokernoot\ComposerPkgScripts\Script\ScriptManager;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -13,14 +13,14 @@ class DumpPackageScriptsCommand extends BaseCommand
     /** @var ScriptManager */
     private $scriptManager;
 
-    function __construct(ScriptManager $scriptManager)
+    public function __construct(ScriptManager $scriptManager)
     {
         parent::__construct();
 
         $this->scriptManager = $scriptManager;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('package-scripts:dump');
         $this->setAliases(['psd']);
@@ -28,7 +28,7 @@ class DumpPackageScriptsCommand extends BaseCommand
         $this->setDescription('Dump compiled scripts (including root package scripts)');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if ($input->getOption('vars')) {
             $value = $this->scriptManager->getPackageVariables();
@@ -37,6 +37,8 @@ class DumpPackageScriptsCommand extends BaseCommand
         }
 
         $this->dump($value, $output);
+
+        return 0;
     }
 
     private function dump($value, OutputInterface $output, int $level = 0): void

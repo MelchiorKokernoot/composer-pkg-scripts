@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Exception;
+namespace MelchiorKokernoot\ComposerPkgScripts\Exception;
 
 class ScriptCompilerException extends \Exception
 {

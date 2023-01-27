@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts;
+namespace MelchiorKokernoot\ComposerPkgScripts;
 
 use Composer\Composer;
 use Composer\EventDispatcher\EventSubscriberInterface;
@@ -10,8 +10,8 @@ use Composer\Plugin\Capable;
 use Composer\Plugin\PluginEvents;
 use Composer\Plugin\PluginInterface;
 use Composer\Script\ScriptEvents;
-use Kuria\ComposerPkgScripts\Capability\ScriptCommandProvider;
-use Kuria\ComposerPkgScripts\Script\ScriptManager;
+use MelchiorKokernoot\ComposerPkgScripts\Capability\ScriptCommandProvider;
+use MelchiorKokernoot\ComposerPkgScripts\Script\ScriptManager;
 
 class Plugin implements PluginInterface, Capable, EventSubscriberInterface
 {

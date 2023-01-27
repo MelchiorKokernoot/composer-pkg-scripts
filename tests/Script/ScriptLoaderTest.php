@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Script;
+namespace MelchiorKokernoot\ComposerPkgScripts\Script;
 
 use Composer\Package\PackageInterface;
 use Composer\Package\RootPackageInterface;
-use Kuria\DevMeta\Test;
+use PHPUnit\Framework\TestCase;
 
-class ScriptLoaderTest extends Test
+class ScriptLoaderTest extends TestCase
 {
     function testShouldLoadScriptsAndVariables()
     {

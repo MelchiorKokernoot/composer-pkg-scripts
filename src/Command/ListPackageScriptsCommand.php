@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Command;
+namespace MelchiorKokernoot\ComposerPkgScripts\Command;
 
 use Composer\Command\BaseCommand;
-use Kuria\ComposerPkgScripts\Script\Script;
-use Kuria\ComposerPkgScripts\Script\ScriptManager;
+use MelchiorKokernoot\ComposerPkgScripts\Script\Script;
+use MelchiorKokernoot\ComposerPkgScripts\Script\ScriptManager;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Helper\TableCell;
 use Symfony\Component\Console\Input\InputInterface;
@@ -22,14 +22,14 @@ class ListPackageScriptsCommand extends BaseCommand
         $this->scriptManager = $scriptManager;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('package-scripts:list');
         $this->setAliases(['psl']);
         $this->setDescription('List available package scripts');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         // list available package scripts
         $output->writeln('<comment>Available package scripts:</comment>');
@@ -45,6 +45,8 @@ class ListPackageScriptsCommand extends BaseCommand
             $output->writeln('');
             $output->writeln('Package script or alias is inactive if it conflicts with another package script, alias or a root script.');
         }
+
+        return 0;
     }
 
     private function getScriptList(OutputInterface $output): Table

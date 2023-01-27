@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Capability;
+namespace MelchiorKokernoot\ComposerPkgScripts\Capability;
 
 use Composer\Command\ScriptAliasCommand;
 use Composer\Plugin\Capability\CommandProvider;
-use Kuria\ComposerPkgScripts\Command\DumpPackageScriptsCommand;
-use Kuria\ComposerPkgScripts\Command\ListPackageScriptsCommand;
-use Kuria\ComposerPkgScripts\Script\ScriptManager;
+use MelchiorKokernoot\ComposerPkgScripts\Command\DumpPackageScriptsCommand;
+use MelchiorKokernoot\ComposerPkgScripts\Command\ListPackageScriptsCommand;
+use MelchiorKokernoot\ComposerPkgScripts\Script\ScriptManager;
 
 class ScriptCommandProvider implements CommandProvider
 {

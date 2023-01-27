@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Kuria\ComposerPkgScripts\Script;
+namespace MelchiorKokernoot\ComposerPkgScripts\Script;
 
 use Composer\Package\PackageInterface;
 
