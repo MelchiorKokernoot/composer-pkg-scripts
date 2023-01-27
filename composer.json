@@ -24,15 +24,10 @@
         }
     },
     "extra": {
-        "class": "Kuria\\ComposerPkgScripts\\Plugin"
+        "class": "MelchiorKokernoot\\ComposerPkgScripts\\Plugin"
     },
     "scripts": {
         "all": ["@cs", "@tests"],
-        "tests": "phpunit --colors=always",
-        "cs": [
-            "phpcs '--standard=./vendor/kuria/dev-meta/src/CodeSniffer/ruleset.xml' -p -s --colors src tests",
-            "phpstan analyze --ansi --configuration=./vendor/kuria/dev-meta/conf/phpstan-src.neon src",
-            "phpstan analyze --ansi --configuration=./vendor/kuria/dev-meta/conf/phpstan-tests.neon tests"
-        ]
+        "tests": "phpunit --colors=always"
     }
 }
