@@ -3,6 +3,7 @@
     "type": "composer-plugin",
     "description": "Composer plugin that provides a way for packages to expose scripts to the root project",
     "keywords": ["composer", "package", "scripts", "script"],
+    "version": "1.0.0",
     "license": "MIT",
     "require": {
         "php": ">=7.1",
@@ -27,7 +28,6 @@
         "class": "MelchiorKokernoot\\ComposerPkgScripts\\Plugin"
     },
     "scripts": {
-        "all": ["@cs", "@tests"],
         "tests": "phpunit --colors=always"
     }
 }
